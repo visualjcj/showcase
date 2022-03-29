@@ -5,7 +5,7 @@ Columns help organize shorter pieces of content horizontally for readability.
 
 ```html
 {{</* columns */>}} <!-- begin columns block -->
-# Left Content
+# Left Contentttt
 Lorem markdownum insigne...
 
 <---> <!-- magic separator, between columns -->
