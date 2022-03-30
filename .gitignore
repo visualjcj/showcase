@@ -3,5 +3,5 @@
 # Backup Files
 *.md~
 # Logs
-*.log
+#*.log
 .hugo_build.lock
