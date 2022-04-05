@@ -14,9 +14,9 @@ var colorGradient = []
 function setup() {
   let c = createCanvas(500, 500, WEBGL);
   // saveCanvas(c)
-  back = loadImage('/assets/gradient.png')
-  sol = loadImage('/assets/sun.png')
-  grid = loadImage('/assets/grid.jpg')
+  back = loadImage('../../../sketches/ejercicios/assets/gradient.png')
+  sol = loadImage('../../../sketches/ejercicios/assets/sun.png')
+  grid = loadImage('../../../sketches/ejercicios/assets/grid.jpg')
   let h = 1200
   let w = 900
   cols = floor(w / scl)
@@ -30,15 +30,21 @@ function setup() {
   colorGradient.push(color(242, 5, 159)) // color: pink
   colorGradient.push(color(242, 231, 75)) // color: yellow
   colorGradient.push(color(242, 197, 114)) // color: orange
-
+  console.log(back)
 
 }
 
 function draw() {
+  //background
   background(200)
-  // directionalLight(0, 0, 250, dirX, -dirY, 0.25);
-  image(back, -250, -250, 500, 500);
+  image(back, -800, -1000, 2000, 1500);
 
+  //fov
+  let fov = PI / 1.5
+  let cameraZ = (height / 2) / tan(fov / 2)
+  perspective(fov, width / height, cameraZ / 10, cameraZ * 10)
+
+  //terrain
   push()
   translate(-width, height / 2 - 210)
   rotateX(PI / 2)
@@ -73,15 +79,13 @@ function draw() {
   }
   pop()
 
+  //sun
   push()
-  // translate(0,0,-400)
-  // pointLight(0, 0, 255, mouseX - 200, mouseY - 200, 200);
   noStroke()
-  // fill(255,0,255)
   rotateY(PI)
   textureMode(NORMAL)
   texture(sol)
-  translate(0, 40, 50)
-  sphere(70)
+  translate(0, 40, 70)
+  sphere(200)
   pop()
 }
