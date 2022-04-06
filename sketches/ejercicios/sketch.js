@@ -21,8 +21,6 @@ function setup() {
   let w = 900
   cols = floor(w / scl)
   rows = floor(h / scl)
-  // stroke(50)
-  // noStroke()
 
   stroke(242, 5, 159)
   colorGradient.push(color(38, 1, 36)) // color: dark
@@ -30,15 +28,12 @@ function setup() {
   colorGradient.push(color(242, 5, 159)) // color: pink
   colorGradient.push(color(242, 231, 75)) // color: yellow
   colorGradient.push(color(242, 197, 114)) // color: orange
-  console.log(back)
-
 }
 
 function draw() {
   //background
   background(200)
   image(back, -800, -1000, 2000, 1500);
-
   //fov
   let fov = PI / 1.5
   let cameraZ = (height / 2) / tan(fov / 2)
