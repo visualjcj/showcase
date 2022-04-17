@@ -1,6 +1,6 @@
 # Problema
 
-En los ultimos años se popularizo un subgenero de la electronica conocido como Synthwave, en plataformas como Youtube surgieron recopilaciones de canciones con este genero con un fondo similar a este:
+En los ultimos años se popularizo un género de la electronica conocido como Synthwave, en plataformas como Youtube surgieron recopilaciones de canciones con este género con un fondo similar a este:
 
 <div>
   <p style = 'text-align:center;'>
