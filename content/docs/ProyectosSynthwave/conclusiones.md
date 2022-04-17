@@ -5,8 +5,9 @@
 
 # Proyecciones futuras
 
-* crear punto de fuga
-* adicionar mas elementos (edificos, palmeras, autos, etc)
-* generar otro tipo de ambientacion
-* explorar otra paleta de colores 
-* explorar otras orientaciones
+* Crear punto de fuga
+* Adicionar mas elementos (edificos, palmeras, autos, etc)
+* Generar otro tipo de ambientacion
+* Explorar otra paleta de colores 
+* Explorar otras orientaciones
+* Utilizar _simplex noise_
