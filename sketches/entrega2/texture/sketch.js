@@ -12,8 +12,8 @@ let outBorder;
 function setup() {
   // img = loadImage('/showcase/sketches/entrega2/texture/assets/tnt.jpg');
   // inconsolata = loadFont('/showcase/sketches/entrega2/texture/assets/Inconsolata.ttf');
-  img = loadImage('../../../sketches/entrega2/texture/assets/tnt.jpg');
-  inconsolata = loadFont('../../../sketches/entrega2/texture/assets/Inconsolata.ttf');
+  img = loadImage('../../../sketches/entrega2/assets/tnt.jpg');
+  inconsolata = loadFont('../../../sketches/entrega2/assets/Inconsolata.ttf');
   createCanvas(400, 400, WEBGL);
   background('white')
   triRef = createTriangle(10, -90, 170, -90, 170, 90)

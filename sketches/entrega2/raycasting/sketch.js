@@ -17,7 +17,7 @@ var select;
 function preload() {
   // load texture tiles
   // tiles = loadImage('/showcase/sketches/entrega2/raycasting/assets/textures-final.png')
-  tiles = loadImage('../../../sketches/entrega2/raycasting/assets/textures-final.png')
+  tiles = loadImage('../../../sketches/entrega2/assets/textures-final.png')
 }
 
 function setup() {
