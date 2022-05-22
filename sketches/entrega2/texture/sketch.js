@@ -8,9 +8,10 @@ let calculateInOtherTriangle = [0, 0];
 let info = "test";
 let barTnt = [0, 0, 0];
 let outBorder;
+
 function setup() {
-  img = loadImage('../../../sketches/entrega2/assets/tnt.jpg');
-  inconsolata = loadFont('../../../sketches/entrega2/assets/inconsolata.ttf');
+  img = loadImage('/showcase/sketches/entrega2/texture/assets/tnt.jpg');
+  inconsolata = loadFont('/showcase/sketches/entrega2/texture/assets/Inconsolata.ttf');
   createCanvas(400, 400, WEBGL);
   background('white')
   triRef = createTriangle(10, -90, 170, -90, 170, 90)
@@ -52,7 +53,7 @@ function draw() {
   pop()
 
   barTnt = barycentric([(mouseX - 200), (mouseY - 200)], triTnt)
-  //get pixel color from triangle tnt
+    //get pixel color from triangle tnt
   pix = tnt.get(mouseX, mouseY);
   //paint pixel with baricentryc
   calculateInOtherTriangle = cartesian(barTnt, triRef)
@@ -112,11 +113,11 @@ function barycentric(p, tri) {
   return [u, v, w];
 }
 
-vec2.sub = function (a, b) {
+vec2.sub = function(a, b) {
   return [a[0] - b[0], a[1] - b[1]];
 };
 
-vec2.dot = function (a, b) {
+vec2.dot = function(a, b) {
   return a[0] * b[0] + a[1] * b[1];
 };
 
@@ -136,4 +137,3 @@ function keyPressed() {
     outBorder = !outBorder;
   }
 }
-
