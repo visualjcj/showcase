@@ -10,7 +10,7 @@ let barTnt = [0, 0, 0];
 let outBorder;
 
 function setup() {
-  img = loadImage('../../../tnt.jpg');
+  img = loadImage('/showcase/tnt.jpg');
   createCanvas(400, 400, WEBGL);
   background('white')
   triRef = createTriangle(10, -90, 170, -90, 170, 90)
