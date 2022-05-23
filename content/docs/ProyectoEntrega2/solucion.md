@@ -41,7 +41,7 @@ Como podemos ver cuando lanzamos el rayo hacia un objeto, podemos ir analizando 
 
 Ahora si, entonces pasemos a ver primero la representación 2D de nuestro mundo y los trazados de rayos.
 
-{{< p5-iframe sketch="/showcase/sketches/entrega2/raycasting/v1/sketch.js" width="505" height="505">}}
+{{< p5-iframe sketch="/showcase/sketches/entrega2/raycasting/v1/sketch.js" width="508" height="508">}}
 
 Como podemos notar nuestro personaje entonces se encuentra en un mundo 2D del cual salen rayos hacia las paredes, cuando choca con una se detiene el rayo.
 
@@ -49,7 +49,7 @@ Como podemos notar nuestro personaje entonces se encuentra en un mundo 2D del cu
 
 Ahora ya teniendo un lienzo en 2D del cual nuestro jugador puede observar, vamos a renderizar estas paredes en 3D gracias al raycasting.
 
-{{< p5-iframe sketch="/showcase/sketches/entrega2/raycasting/v2/sketch.js" width="505" height="505">}}
+{{< p5-iframe sketch="/showcase/sketches/entrega2/raycasting/v2/sketch.js" width="508" height="508">}}
 
 Gracias a la explicación anterior entonces podemos obtener la altura de cada pared, como mencioné nuestro plano de vista tiene un ancho de 500 px (el tamaño de nuestro canvas) y lo que estamos calculando entonces es cuando el rayo choca con un objeto, obtenemos su altura virtual y la representamos en la pared como una linea, así que en este ejemplo cada "pared" es un conjunto de lineas de pixeles.
 
@@ -57,4 +57,4 @@ Gracias a la explicación anterior entonces podemos obtener la altura de cada pa
 
 Finalmente gracias a funcionalidades de p5.js con las imagenes hemos importado texturas. Para aplicarlas es importante recordar que no estamos viendo paredes, estamos viendo columnas de pixeles, así que: ¿cómo colocamos textura? Para esto vamos a realizar clipping de las texturas importadas, y dependiendo de la columna en la que se encuentre tomaremos una columna de la textura y se la aplicaremos a la nuestra.
 
-{{< p5-iframe sketch="/showcase/sketches/entrega2/raycasting/sketch.js" width="505" height="580">}}
+{{< p5-iframe sketch="/showcase/sketches/entrega2/raycasting/sketch.js" width="508" height="580">}}
