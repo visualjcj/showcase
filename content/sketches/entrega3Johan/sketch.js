@@ -3,11 +3,8 @@ let pg;
 let horse;
 
 function preload() {
-  shaderu = loadShader(
-    "./shaders/basic.vert",
-    "./shaders/truchet/1_truchet.frag"
-  );
-  horse = loadModel("./assets/horse.obj", true);
+  shaderu = loadShader("/showcase/basic.vert", "/showcase/1_truchet.frag");
+  horse = loadModel("/showcase/horse.obj", true);
 }
 
 function setup() {
@@ -34,14 +31,3 @@ function draw() {
   rotateZ(150);
   model(horse);
 }
-
-// function keyPressed() {
-//   let cont = 34;
-//   if (key == "c") {
-//     shaderu = loadShader(
-//       "./shaders/basic.vert",
-//       `./shaders/truchet/${cont % 5}_truchet.frag`
-//     );
-//     cont++;
-//   }
-// }
