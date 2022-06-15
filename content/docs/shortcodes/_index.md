@@ -1,4 +1,0 @@
----
-bookFlatSection: true
-bookCollapseSection: true
----
