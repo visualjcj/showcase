@@ -11,4 +11,4 @@
 - 2.1 Implement other coloring brightness tools such as HSV value V, HSL lightness L or Component average.
 - 2.2 Implement texture tinting by mixing color and texel interpolated data.
 
-<!-- {{< p5-iframe sketch="/showcase/sketches/entrega3/cbt/color_tools/hsv.js" lib1="https://cdn.jsdelivr.net/gh/VisualComputing/p5.treegl/p5.treegl.js" lib2="https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.js" width="725" height="525" >}} -->
+{{< p5-iframe sketch="/showcase/sketches/entrega3/cbt/color_tools/hsv.js" lib1="https://cdn.jsdelivr.net/gh/VisualComputing/p5.treegl/p5.treegl.js" lib2="https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.js" width="725" height="525" >}}
