@@ -47,6 +47,10 @@ function draw() {
   sphere(30, 50);
   // use custom shader
   shader(uvShader);
+  push();
+  translate(0, 0, -40)
+  ellipse(1, 1, 700);
+  pop();
   // https://p5js.org/reference/#/p5.Shader/setUniform
   uvShader.setUniform('opacity', opacity.value());
 
@@ -55,7 +59,10 @@ function draw() {
   // see: https://github.com/VisualComputing/p5.treegl#heads-up-display
   beginHUD();
   noStroke();
-  quad(0, 0, width, 0, width, height, 0, height);
+  // quad(0, 0, width, 0, width, height, 0, height);
+  // ellipse(10);
+  // triangle(-1, -1, 1, -1, 0.5, 0.5);
+  // rect(0, 0, 0.5);
   endHUD();
 }
 
