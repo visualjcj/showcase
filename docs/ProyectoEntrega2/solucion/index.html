@@ -1,7 +1,7 @@
 <!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Solucion # Pincel texturizador con coordenadas baricentricas # El objetivo era:
 crear un triángulo de referencia (TNT 🧨) y texturizarlo normalmente (default de P5). con la posición del mouse (Coordenadas del mouse - 200 siendo la mitad del canvas), calcular las coordenadas baricéntricas del triángulo de referencia. con esas coordenadas baricéntricas, miramos las coordenadas baricéntricas en un segundo triángulo (lienzo) y se calculan las respectivas coordenadas cartesianas en relación al triangulo lienzo (proceso inverso del cálculo baricéntrico)."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="Solucion # Pincel texturizador con coordenadas baricentricas # El objetivo era:
 crear un triángulo de referencia (TNT 🧨) y texturizarlo normalmente (default de P5). con la posición del mouse (Coordenadas del mouse - 200 siendo la mitad del canvas), calcular las coordenadas baricéntricas del triángulo de referencia. con esas coordenadas baricéntricas, miramos las coordenadas baricéntricas en un segundo triángulo (lienzo) y se calculan las respectivas coordenadas cartesianas en relación al triangulo lienzo (proceso inverso del cálculo baricéntrico)."><meta property="og:type" content="article"><meta property="og:url" content="https://visualjcj.github.io/showcase/docs/ProyectoEntrega2/solucion/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-05-22T22:16:37-05:00"><title>Solucion | Showcase Template</title><link rel=manifest href=/showcase/manifest.json><link rel=icon href=/showcase/favicon.png type=image/x-icon><link rel=stylesheet href=/showcase/book.min.ab46de3e725a6415339a37bba23a0067534a37289b063c9f8d011515a63097a8.css integrity="sha256-q0bePnJaZBUzmje7ojoAZ1NKNyibBjyfjQEVFaYwl6g=" crossorigin=anonymous><script defer src=/showcase/flexsearch.min.js></script>
-<script defer src=/showcase/en.search.min.2744ab19abd71823c7a6d0122e02d50ffc673264d734ac5032511f7d95b7d429.js integrity="sha256-J0SrGavXGCPHptASLgLVD/xnMmTXNKxQMlEffZW31Ck=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<script defer src=/showcase/en.search.min.ef6f13c701295a8e4fc26073c6f22edaa1dda7d872c005842b7c23a131d09faa.js integrity="sha256-728TxwEpWo5PwmBzxvIu2qHdp9hywAWEK3wjoTHQn6o=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/showcase/><span>Showcase Template</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><input type=checkbox id=section-008a1b9edc159d7b74377ced852a9fd4 class=toggle>
 <label for=section-008a1b9edc159d7b74377ced852a9fd4 class="flex justify-between"><a role=button>3 Entrega Cesar</a></label><ul><li><a href=/showcase/docs/3EntregaCesar/background/>Background</a></li><li><a href=/showcase/docs/3EntregaCesar/conclusiones/>Conclusiones</a></li><li><a href=/showcase/docs/3EntregaCesar/problema/>Problema</a></li><li><a href=/showcase/docs/3EntregaCesar/solucion/>Solucion</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-f3a98f3c4c54154f166a246dd6d01301 class=toggle>
 <label for=section-f3a98f3c4c54154f166a246dd6d01301 class="flex justify-between"><a role=button>3 Entrega Johan</a></label><ul><li><a href=/showcase/docs/3EntregaJohan/background/>Background</a></li><li><a href=/showcase/docs/3EntregaJohan/conclusiones/>Conclusiones</a></li><li><a href=/showcase/docs/3EntregaJohan/problema/>Problema</a></li><li><a href=/showcase/docs/3EntregaJohan/solucion/>Solucion</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-86553e73c4e41a1896bb6eed86041086 class=toggle>
@@ -11,7 +11,7 @@ crear un triángulo de referencia (TNT 🧨) y texturizarlo normalmente (default
 <strong>Solucion</strong>
 <label for=toc-control><img src=/showcase/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#solucion>Solucion</a><ul><li><a href=#pincel-texturizador-con-coordenadas-baricentricas>Pincel texturizador con coordenadas baricentricas</a></li><li><a href=#renderizado-3d-a-través-de-raycasting>Renderizado 3D a través de Raycasting</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=solucion>Solucion
 <a class=anchor href=#solucion>#</a></h1><h2 id=pincel-texturizador-con-coordenadas-baricentricas>Pincel texturizador con coordenadas baricentricas
-<a class=anchor href=#pincel-texturizador-con-coordenadas-baricentricas>#</a></h2><iframe id=sketch.js style=width:425px;height:425px srcdoc="
+<a class=anchor href=#pincel-texturizador-con-coordenadas-baricentricas>#</a></h2><iframe id=sketch style=width:425px;height:425px srcdoc="
         <!DOCTYPE html>
         <html>
           <head>
@@ -25,13 +25,6 @@ crear un triángulo de referencia (TNT 🧨) y texturizarlo normalmente (default
             <script src=/showcase/sketches/entrega2/texture/sketch.js></script>
           </head>
           <body>
-            <style>
-              html, body{
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-              }
-            </style>
           </body>
         </html>
       "></iframe><p>El objetivo era:</p><ul><li>crear un triángulo de referencia (TNT 🧨) y texturizarlo normalmente (default de P5).</li><li>con la posición del mouse (Coordenadas del mouse - 200 siendo la mitad del canvas), calcular las coordenadas baricéntricas del triángulo de referencia.</li><li>con esas coordenadas baricéntricas, miramos las coordenadas baricéntricas en un segundo triángulo (lienzo) y se calculan las respectivas coordenadas cartesianas en relación al triangulo lienzo (proceso inverso del cálculo baricéntrico).</li></ul><pre tabindex=0><code>function dotDimensional(a, b) {
@@ -43,7 +36,7 @@ crear un triángulo de referencia (TNT 🧨) y texturizarlo normalmente (default
   return result;
 }
 </code></pre><ul><li>obtener el valor del color del pixel del triángulo de referencia (TNT 🧨).</li><li>con las coordenadas cartesianas y el color del pixel se crea un círculo pequeño simulando un píxel.</li><li>ver el resultado.</li></ul><p>El problema&mldr;</p><p>para obtener el color del pixel se necesita pasar una imagen, sin embargo este ejercicio requiere es obtener el píxel del triángulo de referencia (TNT 🧨) pero esto no es una imagen sino un objeto de tipo triángulo con una textura, esa es la razón del porque no está texturizando bien, en realidad, es como si estuviera tomando los píxeles de la imagen original (en forma de cuadrado).</p><hr><h2 id=renderizado-3d-a-través-de-raycasting>Renderizado 3D a través de Raycasting
-<a class=anchor href=#renderizado-3d-a-trav%c3%a9s-de-raycasting>#</a></h2><p>Antes de pasar a las soluciones quiero mencionar sobre cómo los rayos parten desde el usuario hacia los objetos. Existe otra forma de realizar esto y es haciendo uso de la clase vector que tiene p5.js y sus métodos vectoriales, sin embargo en este caso lo que hicimos fue primero dividir nuestro mundo por casillas, todas del mismo tamaño.</p><p><img src=https://i.imgur.com/ipjjqow.png alt=rayCasting4.png></p><p>Como podemos ver cuando lanzamos el rayo hacia un objeto, podemos ir analizando las componentes de nuestro vector, y nos damos cuenta que en cada corte que realiza horizontalmente nuestro vector siempre llega con la misma dirección, por lo tanto no es muy difícil hallar el corte de la primera casilla y propagar la misma dirección hasta que encuentre un objeto. Esto sucede de la misma forma para los cortes verticales de las casillas.</p><p>Ahora si, entonces pasemos a ver primero la representación 2D de nuestro mundo y los trazados de rayos.</p><iframe id=sketch.js style=width:508px;height:508px srcdoc="
+<a class=anchor href=#renderizado-3d-a-trav%c3%a9s-de-raycasting>#</a></h2><p>Antes de pasar a las soluciones quiero mencionar sobre cómo los rayos parten desde el usuario hacia los objetos. Existe otra forma de realizar esto y es haciendo uso de la clase vector que tiene p5.js y sus métodos vectoriales, sin embargo en este caso lo que hicimos fue primero dividir nuestro mundo por casillas, todas del mismo tamaño.</p><p><img src=https://i.imgur.com/ipjjqow.png alt=rayCasting4.png></p><p>Como podemos ver cuando lanzamos el rayo hacia un objeto, podemos ir analizando las componentes de nuestro vector, y nos damos cuenta que en cada corte que realiza horizontalmente nuestro vector siempre llega con la misma dirección, por lo tanto no es muy difícil hallar el corte de la primera casilla y propagar la misma dirección hasta que encuentre un objeto. Esto sucede de la misma forma para los cortes verticales de las casillas.</p><p>Ahora si, entonces pasemos a ver primero la representación 2D de nuestro mundo y los trazados de rayos.</p><iframe id=sketch style=width:508px;height:508px srcdoc="
         <!DOCTYPE html>
         <html>
           <head>
@@ -57,16 +50,9 @@ crear un triángulo de referencia (TNT 🧨) y texturizarlo normalmente (default
             <script src=/showcase/sketches/entrega2/raycasting/v1/sketch.js></script>
           </head>
           <body>
-            <style>
-              html, body{
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-              }
-            </style>
           </body>
         </html>
-      "></iframe><p>Como podemos notar nuestro personaje entonces se encuentra en un mundo 2D del cual salen rayos hacia las paredes, cuando choca con una se detiene el rayo.</p><hr><p>Ahora ya teniendo un lienzo en 2D del cual nuestro jugador puede observar, vamos a renderizar estas paredes en 3D gracias al raycasting.</p><iframe id=sketch.js style=width:508px;height:508px srcdoc="
+      "></iframe><p>Como podemos notar nuestro personaje entonces se encuentra en un mundo 2D del cual salen rayos hacia las paredes, cuando choca con una se detiene el rayo.</p><hr><p>Ahora ya teniendo un lienzo en 2D del cual nuestro jugador puede observar, vamos a renderizar estas paredes en 3D gracias al raycasting.</p><iframe id=sketch style=width:508px;height:508px srcdoc="
         <!DOCTYPE html>
         <html>
           <head>
@@ -80,16 +66,9 @@ crear un triángulo de referencia (TNT 🧨) y texturizarlo normalmente (default
             <script src=/showcase/sketches/entrega2/raycasting/v2/sketch.js></script>
           </head>
           <body>
-            <style>
-              html, body{
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-              }
-            </style>
           </body>
         </html>
-      "></iframe><p>Gracias a la explicación anterior entonces podemos obtener la altura de cada pared, como mencioné nuestro plano de vista tiene un ancho de 500 px (el tamaño de nuestro canvas) y lo que estamos calculando entonces es cuando el rayo choca con un objeto, obtenemos su altura virtual y la representamos en la pared como una linea, así que en este ejemplo cada &ldquo;pared&rdquo; es un conjunto de lineas de pixeles.</p><hr><p>Finalmente gracias a funcionalidades de p5.js con las imagenes hemos importado texturas. Para aplicarlas es importante recordar que no estamos viendo paredes, estamos viendo columnas de pixeles, así que: ¿cómo colocamos textura? Para esto vamos a realizar clipping de las texturas importadas, y dependiendo de la columna en la que se encuentre tomaremos una columna de la textura y se la aplicaremos a la nuestra.</p><iframe id=sketch.js style=width:508px;height:580px srcdoc="
+      "></iframe><p>Gracias a la explicación anterior entonces podemos obtener la altura de cada pared, como mencioné nuestro plano de vista tiene un ancho de 500 px (el tamaño de nuestro canvas) y lo que estamos calculando entonces es cuando el rayo choca con un objeto, obtenemos su altura virtual y la representamos en la pared como una linea, así que en este ejemplo cada &ldquo;pared&rdquo; es un conjunto de lineas de pixeles.</p><hr><p>Finalmente gracias a funcionalidades de p5.js con las imagenes hemos importado texturas. Para aplicarlas es importante recordar que no estamos viendo paredes, estamos viendo columnas de pixeles, así que: ¿cómo colocamos textura? Para esto vamos a realizar clipping de las texturas importadas, y dependiendo de la columna en la que se encuentre tomaremos una columna de la textura y se la aplicaremos a la nuestra.</p><iframe id=sketch style=width:508px;height:580px srcdoc="
         <!DOCTYPE html>
         <html>
           <head>
@@ -103,14 +82,7 @@ crear un triángulo de referencia (TNT 🧨) y texturizarlo normalmente (default
             <script src=/showcase/sketches/entrega2/raycasting/sketch.js></script>
           </head>
           <body>
-            <style>
-              html, body{
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-              }
-            </style>
           </body>
         </html>
       "></iframe></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/visualcomputing/showcase/commit/ca629530b5c8e7162acfdc55bfe29c928c726f88 title='Last modified by Cesar Solano | May 23, 2022' target=_blank rel=noopener><img src=/showcase/svg/calendar.svg class=book-icon alt=Calendar>
-<span>May 23, 2022</span></a></div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#solucion>Solucion</a><ul><li><a href=#pincel-texturizador-con-coordenadas-baricentricas>Pincel texturizador con coordenadas baricentricas</a></li><li><a href=#renderizado-3d-a-través-de-raycasting>Renderizado 3D a través de Raycasting</a></li></ul></li></ul></nav></div></aside></main></body></html>
+<span>May 23, 2022</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#solucion>Solucion</a><ul><li><a href=#pincel-texturizador-con-coordenadas-baricentricas>Pincel texturizador con coordenadas baricentricas</a></li><li><a href=#renderizado-3d-a-través-de-raycasting>Renderizado 3D a través de Raycasting</a></li></ul></li></ul></nav></div></aside></main></body></html>
