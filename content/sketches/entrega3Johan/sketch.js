@@ -3,7 +3,7 @@ let pg;
 let horse;
 
 function preload() {
-  shaderu = loadShader("/showcase/basic.vert", "/showcase/1_truchet.frag");
+  shaderu = loadShader("/showcase/basic.vert", "/showcase/3_truchet.frag");
   horse = loadModel("/showcase/horse.obj", true);
 }
 
