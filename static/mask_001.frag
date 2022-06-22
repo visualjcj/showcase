@@ -9,6 +9,8 @@ uniform float mask[9];
 uniform vec2 u_mouse;
 uniform vec2 u_resolution;
 uniform int option;
+uniform bool region;
+
 // we need our interpolated tex coord
 varying vec2 texcoords2;
 
@@ -16,6 +18,15 @@ void main() {
 
   //0 Mask - 1 magnifier
   if(option == 0) {
+    vec2 xy = gl_FragCoord.xy - u_mouse.xy;
+
+    float R = 100.;
+    float h = 40.;
+    float hr = R * sqrt(1. - ((R - h) / R) * ((R - h) / R));
+    float r = sqrt(xy.x * xy.x + xy.y * xy.y);
+
+    vec2 new_xy = r < hr ? xy * (R - h) / sqrt(R * R - r * r) : xy;
+
   // 1. Use offset to move along texture space.
   // In this case to find the texcoords of the texel neighbours.
     vec2 tc0 = texcoords2 + vec2(-texOffset.s, -texOffset.t);
@@ -46,19 +57,22 @@ void main() {
     for(int i = 0; i < 9; i++) {
       convolution += rgba[i] * mask[i];
     }
-    gl_FragColor = vec4(convolution.rgb, 1.0);
 
+    if(region) {
+      gl_FragColor = r < hr ? vec4(convolution.rgb, 1.0) : texture2D(texture, texcoords2);
+    } else {
+      gl_FragColor = vec4(convolution.rgb, 1.0);
+    }
   } else if(option == 1) {
+    vec2 xy = gl_FragCoord.xy - u_mouse.xy;
 
     float R = 100.;
     float h = 40.;
     float hr = R * sqrt(1. - ((R - h) / R) * ((R - h) / R));
+    float r = sqrt((xy.x * xy.x) + (xy.y * xy.y));
 
-    vec2 xy = gl_FragCoord.xy - u_mouse.xy;
-    float r = sqrt(xy.x * xy.x + xy.y * xy.y);
-    //vec2 new_xy = r > hr ? xy * (R - h) / sqrt(R * R - r * r) : xy;
-    vec2 new_xy = r < hr ? xy * (R - h) / sqrt(R * R - r * r) : xy;
+    vec2 new_xy = r < hr ? xy * (R - h) / sqrt(R * R + r * r) : xy;
 
-    gl_FragColor = texture2D(texture, (new_xy + u_mouse.xy) / u_resolution);
+    gl_FragColor = texture2D(texture, (new_xy.xy + u_mouse.xy) / u_resolution.xy);
   }
 }
