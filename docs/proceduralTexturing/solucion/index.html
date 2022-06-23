@@ -1,5 +1,7 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content=" Solucion # "><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content=" Solucion # "><meta property="og:type" content="article"><meta property="og:url" content="https://visualjcj.github.io/showcase/docs/proceduralTexturing/solucion/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-06-20T10:14:23-05:00"><title>Solucion | Showcase Template</title><link rel=manifest href=/showcase/manifest.json><link rel=icon href=/showcase/favicon.png type=image/x-icon><link rel=stylesheet href=/showcase/book.min.ab46de3e725a6415339a37bba23a0067534a37289b063c9f8d011515a63097a8.css integrity="sha256-q0bePnJaZBUzmje7ojoAZ1NKNyibBjyfjQEVFaYwl6g=" crossorigin=anonymous><script defer src=/showcase/flexsearch.min.js></script>
-<script defer src=/showcase/en.search.min.b5bb2a2bbbf73d5f66613f0d20d4065d36743bb815d0c7be403904c8babf6bfd.js integrity="sha256-tbsqK7v3PV9mYT8NINQGXTZ0O7gV0Me+QDkEyLq/a/0=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Solucion # lo primero que se implementa es el fragment shader, para esto la idea es dividir con frag el shader y crear los patrones, para este caso no se construllo algun patron con los tiles en especifico sino que se empleo una funcion que genera aleatoreos para rotar las baldosas.
+Truchet Tiles fragment shader #ifdef GL_ES precision mediump float; #endif uniform vec2 u_resolution; uniform float u_time; uniform int option; uniform float vel; // funcion para rotar las baldosas float Hash21(vec2 p){ p=fract(p*vec2(264."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="Solucion # lo primero que se implementa es el fragment shader, para esto la idea es dividir con frag el shader y crear los patrones, para este caso no se construllo algun patron con los tiles en especifico sino que se empleo una funcion que genera aleatoreos para rotar las baldosas.
+Truchet Tiles fragment shader #ifdef GL_ES precision mediump float; #endif uniform vec2 u_resolution; uniform float u_time; uniform int option; uniform float vel; // funcion para rotar las baldosas float Hash21(vec2 p){ p=fract(p*vec2(264."><meta property="og:type" content="article"><meta property="og:url" content="https://visualjcj.github.io/showcase/docs/proceduralTexturing/solucion/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-06-23T18:48:04-05:00"><title>Solucion | Showcase Template</title><link rel=manifest href=/showcase/manifest.json><link rel=icon href=/showcase/favicon.png type=image/x-icon><link rel=stylesheet href=/showcase/book.min.ab46de3e725a6415339a37bba23a0067534a37289b063c9f8d011515a63097a8.css integrity="sha256-q0bePnJaZBUzmje7ojoAZ1NKNyibBjyfjQEVFaYwl6g=" crossorigin=anonymous><script defer src=/showcase/flexsearch.min.js></script>
+<script defer src=/showcase/en.search.min.4b053d27aa638a403e52ade980af0fadfa76a0add0b153828dbe6f25a883a229.js integrity="sha256-SwU9J6pjikA+Uq3pgK8Prfp2oK3QsVOCjb5vJaiDoik=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/showcase/><span>Showcase Template</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><input type=checkbox id=section-800fa7130bc300342fb44767fe98e27e class=toggle>
 <label for=section-800fa7130bc300342fb44767fe98e27e class="flex justify-between"><a role=button>Image Procesing</a></label><ul><li><a href=/showcase/docs/imageProcesing/background/>Background</a></li><li><a href=/showcase/docs/imageProcesing/conclusiones/>Conclusiones</a></li><li><a href=/showcase/docs/imageProcesing/problema/>Problema</a></li><li><a href=/showcase/docs/imageProcesing/solucion/>Solucion</a></li></ul></li><li class=book-section-flat><span>Informacion</span><ul><li><a href=/showcase/docs/informacion/members/>Members</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-be1ba8d47421dca07f5a135d77331e41 class=toggle>
 <label for=section-be1ba8d47421dca07f5a135d77331e41 class="flex justify-between"><a role=button>Lighting</a></label><ul><li><a href=/showcase/docs/Lighting/background/>Background</a></li><li><a href=/showcase/docs/Lighting/conclusiones/>Conclusiones</a></li><li><a href=/showcase/docs/Lighting/problema/>Problema</a></li><li><a href=/showcase/docs/Lighting/solucion/>Solucion</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-2d5785a700e73a6e18bd06436584720d class=toggle checked>
@@ -9,7 +11,64 @@
 <label for=section-e18f3bdacc3c5445041693de40e59e0d class="flex justify-between"><a role=button>Texturing</a></label><ul><li><a href=/showcase/docs/Texturing/background/>Background</a></li><li><a href=/showcase/docs/Texturing/conclusiones/>Conclusiones</a></li><li><a href=/showcase/docs/Texturing/problema/>Problema</a></li><li><a href=/showcase/docs/Texturing/solucion/>Solucion</a></li></ul></li></ul><ul><li><a href=/showcase/posts/>Blog</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/showcase/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Solucion</strong>
 <label for=toc-control><img src=/showcase/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#solucion>Solucion</a></li></ul></nav></aside></header><article class=markdown><h1 id=solucion>Solucion
-<a class=anchor href=#solucion>#</a></h1><iframe id=sketch style=width:608px;height:608px srcdoc="
+<a class=anchor href=#solucion>#</a></h1><p>lo primero que se implementa es el fragment shader, para esto la idea es dividir con frag el shader y crear los patrones, para este caso no se construllo algun patron con los tiles en especifico sino que se empleo una funcion que genera aleatoreos para rotar las baldosas.</p><details open><summary>Truchet Tiles fragment shader</summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-glsl data-lang=glsl><span style=display:flex><span><span style=color:#75715e>#ifdef GL_ES</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>precision</span> <span style=color:#66d9ef>mediump</span> <span style=color:#66d9ef>float</span>;
+</span></span><span style=display:flex><span><span style=color:#75715e>#endif</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>uniform</span> <span style=color:#66d9ef>vec2</span> u_resolution;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>uniform</span> <span style=color:#66d9ef>float</span> u_time;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>uniform</span> <span style=color:#66d9ef>int</span> option;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>uniform</span> <span style=color:#66d9ef>float</span> vel;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// funcion para rotar las baldosas</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>float</span> Hash21(<span style=color:#66d9ef>vec2</span> p){
+</span></span><span style=display:flex><span>  p<span style=color:#f92672>=</span>fract(p<span style=color:#f92672>*</span><span style=color:#66d9ef>vec2</span>(<span style=color:#ae81ff>264.34</span>,<span style=color:#ae81ff>435.345</span>));
+</span></span><span style=display:flex><span>  p<span style=color:#f92672>+=</span>dot(p,p<span style=color:#f92672>+</span><span style=color:#ae81ff>34.23</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> fract(p.x<span style=color:#f92672>*</span>p.y);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> main(){
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>vec2</span> coord<span style=color:#f92672>=</span>gl_FragCoord.xy<span style=color:#f92672>/</span>u_resolution;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>vec3</span> color<span style=color:#f92672>=</span><span style=color:#66d9ef>vec3</span>(<span style=color:#ae81ff>0.</span>);
+</span></span><span style=display:flex><span>  <span style=color:#75715e>//para mover el shader</span>
+</span></span><span style=display:flex><span>  coord<span style=color:#f92672>+=</span>u_time<span style=color:#f92672>*</span>vel;
+</span></span><span style=display:flex><span>  coord<span style=color:#f92672>*=</span><span style=color:#ae81ff>10.</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>//se divide el shader</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>vec2</span> gv<span style=color:#f92672>=</span>fract(coord)<span style=color:#f92672>-</span><span style=color:#ae81ff>.5</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>vec2</span> id<span style=color:#f92672>=</span>floor(coord);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> n<span style=color:#f92672>=</span>Hash21(id);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> width<span style=color:#f92672>=</span><span style=color:#ae81ff>.2</span>;
+</span></span><span style=display:flex><span>  <span style=color:#75715e>//se efectua la rotacion</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(n<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>.5</span>){
+</span></span><span style=display:flex><span>    gv.x<span style=color:#f92672>*=-</span><span style=color:#ae81ff>1.</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#75715e>//patron de dos lineas diagonales</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> d<span style=color:#f92672>=</span>abs(abs(gv.x<span style=color:#f92672>+</span>gv.y)<span style=color:#f92672>-</span><span style=color:#ae81ff>.5</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> mask<span style=color:#f92672>=</span>smoothstep(<span style=color:#ae81ff>.01</span>,<span style=color:#f92672>-</span><span style=color:#ae81ff>.01</span>,d<span style=color:#f92672>-</span>width);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  color<span style=color:#f92672>+=</span>mask;
+</span></span><span style=display:flex><span>  gl_FragColor<span style=color:#f92672>=</span><span style=color:#66d9ef>vec4</span>(color,<span style=color:#ae81ff>1.</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></details><p><iframe id=sketch2 style=width:605px;height:605px srcdoc="
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js></script>
+            
+            
+            
+            
+            
+            <script src=/showcase/sketches/entrega3Johan/sketch2.js></script>
+          </head>
+          <body>
+          </body>
+        </html>
+      "></iframe>
+<iframe id=sketch style=width:605px;height:605px srcdoc="
         <!DOCTYPE html>
         <html>
           <head>
@@ -25,5 +84,66 @@
           <body>
           </body>
         </html>
-      "></iframe></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/visualcomputing/showcase/commit/1c1f331ddec2bccc4611e8cb3a450e9ea95164ac title='Last modified by josteda99 | June 20, 2022' target=_blank rel=noopener><img src=/showcase/svg/calendar.svg class=book-icon alt=Calendar>
-<span>June 20, 2022</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#solucion>Solucion</a></li></ul></nav></div></aside></main></body></html>
+      "></iframe></p><p>aqui lo unico que nos faltaria es emplearlo como textura, para ello usamos el createGraphics() y usamos un modelo de caballo para mostrar los patrones (ya que los truchet son a blanco y negro se queria mostrar como se verian estos patrones como si fueran zebras),</p><details open><summary>sketch.js</summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>shaderu</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>pg</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>horse</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>preload</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>shaderu</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>loadShader</span>(<span style=color:#e6db74>&#34;/showcase/basic.vert&#34;</span>, <span style=color:#e6db74>&#34;/showcase/all_truchet.frag&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>horse</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>loadModel</span>(<span style=color:#e6db74>&#34;/showcase/horse.obj&#34;</span>, <span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>setup</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>createCanvas</span>(<span style=color:#ae81ff>580</span>, <span style=color:#ae81ff>580</span>, <span style=color:#a6e22e>WEBGL</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>textuSha</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createGraphics</span>(<span style=color:#ae81ff>580</span>, <span style=color:#ae81ff>580</span>, <span style=color:#a6e22e>WEBGL</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>//configuracion de la textura
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>textuSha</span>.<span style=color:#a6e22e>textureMode</span>(<span style=color:#a6e22e>NORMAL</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>textuSha</span>.<span style=color:#a6e22e>shader</span>(<span style=color:#a6e22e>shaderu</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>textureMode</span>(<span style=color:#a6e22e>NORMAL</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>noStroke</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>//pasamos las uniform de u_resolution
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>shaderu</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;u_resolution&#34;</span>, [
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>width</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>pixelDensity</span>(),
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>height</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>pixelDensity</span>(),
+</span></span><span style=display:flex><span>  ]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>//opciones
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>option</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createSelect</span>();
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>option</span>.<span style=color:#a6e22e>position</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>10</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>option</span>.<span style=color:#a6e22e>option</span>(<span style=color:#e6db74>&#34;option 0&#34;</span>, <span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>option</span>.<span style=color:#a6e22e>option</span>(<span style=color:#e6db74>&#34;option 1&#34;</span>, <span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>option</span>.<span style=color:#a6e22e>option</span>(<span style=color:#e6db74>&#34;option 2&#34;</span>, <span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>option</span>.<span style=color:#a6e22e>option</span>(<span style=color:#e6db74>&#34;option 3&#34;</span>, <span style=color:#ae81ff>3</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>option</span>.<span style=color:#a6e22e>option</span>(<span style=color:#e6db74>&#34;option 4&#34;</span>, <span style=color:#ae81ff>4</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>option</span>.<span style=color:#a6e22e>selected</span>(<span style=color:#e6db74>&#34;none&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>option</span>.<span style=color:#a6e22e>changed</span>(() =&gt; {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>shaderu</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;option&#34;</span>, <span style=color:#a6e22e>option</span>.<span style=color:#a6e22e>value</span>());
+</span></span><span style=display:flex><span>  });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>//slider de velocidad
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>vel</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createSlider</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0.05</span>, <span style=color:#ae81ff>0.05</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vel</span>.<span style=color:#a6e22e>position</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>25</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>vel</span>.<span style=color:#a6e22e>style</span>(<span style=color:#e6db74>&#34;width&#34;</span>, <span style=color:#e6db74>&#34;280px&#34;</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>draw</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>background</span>(<span style=color:#ae81ff>199</span>, <span style=color:#ae81ff>255</span>, <span style=color:#ae81ff>237</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>//cambiamos las uniforsm
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>shaderu</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;u_mouse&#34;</span>, [<span style=color:#a6e22e>mouseX</span>, <span style=color:#a6e22e>mouseY</span>]);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>shaderu</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;u_time&#34;</span>, <span style=color:#a6e22e>frameCount</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>10</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>shaderu</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;vel&#34;</span>, <span style=color:#a6e22e>vel</span>.<span style=color:#a6e22e>value</span>());
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>//creamos la textura, en este caso lo usamos con rect (se podria
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#75715e>//usar cualquier otra forma) y se aplica al modelo del caballo
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>textuSha</span>.<span style=color:#a6e22e>rect</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#a6e22e>width</span>, <span style=color:#a6e22e>height</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>texture</span>(<span style=color:#a6e22e>textuSha</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>orbitControl</span>();
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>rotateX</span>(<span style=color:#ae81ff>20</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>rotateZ</span>(<span style=color:#ae81ff>150</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>model</span>(<span style=color:#a6e22e>horse</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></details><p>la idea de los truchet y la implementacion con los shaders se sacaron del tutorial de youtube <a href="https://www.youtube.com/watch?v=2R7h76GoIJM">Shader Coding: Truchet Tiling Explained!</a></p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/visualcomputing/showcase/commit/810ca6afa42b1ba403a6966dbe19241823971742 title='Last modified by josteda99 | June 23, 2022' target=_blank rel=noopener><img src=/showcase/svg/calendar.svg class=book-icon alt=Calendar>
+<span>June 23, 2022</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#solucion>Solucion</a></li></ul></nav></div></aside></main></body></html>
