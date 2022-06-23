@@ -10,15 +10,20 @@ function preload() {
 function setup() {
   createCanvas(580, 580, WEBGL);
   textuSha = createGraphics(580, 580, WEBGL);
+
+  //configuracion de la textura
   textuSha.textureMode(NORMAL);
   textuSha.shader(shaderu);
   textureMode(NORMAL);
   noStroke();
+
+  //pasamos las uniform de u_resolution
   shaderu.setUniform("u_resolution", [
     width * pixelDensity(),
     height * pixelDensity(),
   ]);
 
+  //opciones
   option = createSelect();
   option.position(10, 10);
   option.option("option 0", 0);
@@ -31,6 +36,7 @@ function setup() {
     shaderu.setUniform("option", option.value());
   });
 
+  //slider de velocidad
   vel = createSlider(0, 1, 0.05, 0.05);
   vel.position(10, 25);
   vel.style("width", "280px");
@@ -38,12 +44,18 @@ function setup() {
 
 function draw() {
   background(199, 255, 237);
+
+  //cambiamos las uniforsm
   shaderu.setUniform("u_mouse", [mouseX, mouseY]);
   shaderu.setUniform("u_time", frameCount / 10);
   shaderu.setUniform("vel", vel.value());
+
+  //creamos la textura, en este caso lo usamos con rect (se podria
+  //usar cualquier otra forma) y se aplica al modelo del caballo
   textuSha.rect(0, 0, width, height);
   texture(textuSha);
-
-  noStroke();
-  quad(-580, 580, -580, -580, 580, -580, 580, 580);
+  orbitControl();
+  rotateX(20);
+  rotateZ(150);
+  model(horse);
 }
