@@ -15,7 +15,7 @@ let backShader;
 
 function preload() {
   sunShader = loadShader("/showcase/basic.vert", "/showcase/sun.frag");
-  backShader = loadShader("/showcase/basic.vert", "/showcase/background.frag");
+  backShader = loadShader("/showcase/basic.vert", "/showcase/back.frag");
 }
 
 function setup() {
@@ -29,7 +29,7 @@ function setup() {
   rows = floor(h / scl);
 
   //sun
-  textureSun = createGraphics(3000, 3000, WEBGL);
+  textureSun = createGraphics(1000, 1000, WEBGL);
   textureSun.textureMode(NORMAL);
   textureSun.shader(sunShader);
   textureMode(NORMAL);
@@ -57,7 +57,6 @@ function setup() {
   colorGradient.push(color(242, 231, 75)); // color: yellow
   colorGradient.push(color(242, 197, 114)); // color: orange
 }
-
 function draw() {
   //background
   background(0);
