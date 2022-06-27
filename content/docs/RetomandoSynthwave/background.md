@@ -1,1 +1,3 @@
 # Background
+
+Uno de los problemas que se nos presentó en ese momento fue el generar efectos en los elementos, la solución que se nos ocurrió en ese momento fue generar imágenes estáticas para el background y el sol para posteriormente usarlo como textura en los objetos, P5 tiene múltiples herramientas que permiten realizar diferentes funciones (luces y sombras), intentamos usar las luces ambientales que usa p5, pero no se veía bien, por otra parte, la aplicación se ponía lento (podría ser de HUGO, pero en la herramienta de p5 también fallaba).
