@@ -4,9 +4,14 @@ precision mediump float;
 uniform int selectedTool;
 uniform int colorTexture;
 uniform sampler2D texture;
+uniform vec2 mousePos;
 
 // interpolated texcoord (same name and type as in vertex shader)
 varying vec2 texcoords2;
+
+float map(float value, float min1, float max1, float min2, float max2) {
+  return min2 + (value - min1) * (max2 - min2) / (max1 - min1);
+}
 
 vec3 rgb2hsvMia(vec3 c) {
   vec3 outputColor = vec3(0.0);
@@ -73,8 +78,6 @@ vec3 hsv2hsl(vec3 c) {
 }
 
 void main() {
-  // texture2D(texture, texcoords2) samples texture at texcoords2 
-  // and returns the normalized texel color
   vec4 texel = texture2D(texture, texcoords2);
 
   vec4 outputValue;
@@ -102,6 +105,12 @@ void main() {
     outputValue.rgb = outputValue.rgb * vec3(0.0, 1.0, 0.0);
   } else if(colorTexture == 3) {
     outputValue.rgb = outputValue.rgb * vec3(0.0, 0.0, 1.0);
+  } else if(colorTexture == 4) {
+    if(mousePos.x < 0.5) {
+      outputValue.rgb = outputValue.rgb * vec3(mousePos.x, mousePos.y, 0.5 - mousePos.x);
+    }else {
+      outputValue.rgb = outputValue.rgb * vec3(1.0 - mousePos.x, mousePos.y, mousePos.x);
+    }
   }
 
   gl_FragColor = outputValue;
